@@ -8,14 +8,15 @@ import { MyServiceService } from '../my-service.service';
 })
 export class HeroComponent implements OnInit {
 
-  message : string = "subscribed data";
   welcomeMessage : string = "Hello from hero component";
-  
+  border: string;
+
   constructor(private myService:MyServiceService) {
   }
   
-  onClick(){
-    this.myService.ChangeMessage(this.message);
+  onClick(message: string){
+    this.myService.ChangeMessage(message);
+    this.border = '2px solid cornflowerblue'
   }
 
   ngOnInit(): void {

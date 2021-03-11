@@ -11,6 +11,10 @@ export class MasterComponent implements OnInit {
   welcomeMessage : string = "Hello from master component";
   imageUrl : string = "../../assets/cat-solid.svg"
   birthday = new Date(2000, 3, 22);
+  name = "Nisarg";
+  newOrder = 'Follow your orders!!';
+  orders = [];
+
   constructor(private myService:MyServiceService) {
    }
   
@@ -18,6 +22,10 @@ export class MasterComponent implements OnInit {
     this.myService.currentMessage.subscribe(data=>{
       console.log(data);
     });
+  }
+
+  addOrder(newOrder: string) {
+    this.orders.push(newOrder);
   }
 
 }

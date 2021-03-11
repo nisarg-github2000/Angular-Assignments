@@ -1,2 +1,5 @@
+<!-- interpolation -->
 <h4>{{welcomeMessage}}</h4>
-<button (click)="onClick()">Click me</button>
+<!-- template variable, attribute binding, event binding -->
+<input #message placeholder="Enter message" />
+<button [style.border]="border" (click)="onClick(message.value)">Click me</button>
